@@ -15,4 +15,6 @@ RUN echo "${CONSUL_SHA256}  /tmp/consul.zip" > /tmp/consul.sha256 \
   && chmod +x /bin/consul \
   && rm /tmp/consul.zip
 
+ADD json.sh ~
+
 RUN apk add --update mysql-client && rm -rf /var/cache/apk/*
