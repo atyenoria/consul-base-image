@@ -16,7 +16,7 @@ RUN echo "${CONSUL_SHA256}  /tmp/consul.zip" > /tmp/consul.sha256 \
   && rm /tmp/consul.zip
 
 ADD json.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/json
+RUN mv /usr/local/bin/json.sh /usr/local/bin/json chmod +x /usr/local/bin/json
 RUN curl -L https://github.com/sequenceiq/docker-alpine-dig/releases/download/v9.10.2/dig.tgz|tar -xzv -C /usr/local/bin/
 
 RUN apk add --update mysql-client && rm -rf /var/cache/apk/*
